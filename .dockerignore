@@ -1,0 +1,76 @@
+# 1. Version control
+.git/
+.gitignore
+.svn/
+.hg/
+
+# 2. IDE/editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 3. Node.js/TypeScript
+node_modules/
+npm-debug.log
+yarn-debug.log
+.angular/
+
+# 4. Java
+# (Do NOT ignore .mvn/ or mvnw files as per instructions)
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# 5. Build outputs
+/dist/
+/build/
+/out/
+
+# 6. Test and debug artifacts
+test/
+tests/
+*.log
+debug/
+
+# 7. Temporary and cache files
+*.tmp
+tmp/
+temp/
+.cache/
+coverage/
+
+# 8. Environment and secrets
+.env*
+*.env
+*.pem
+*.key
+*.crt
+config.local.*
+*.local.yml
+.local/
+
+# 9. Documentation and project meta
+docs/
+*.md
+README*
+HELP.md
+
+# 10. Docker and Compose files
+Dockerfile*
+docker-compose*
+compose.yaml
+
+# 11. Miscellaneous
+*.sql
+
+# 12. Exclude lock files and build tools from ignore (explicitly allowed)
+!package-lock.json
+!mvnw
+!mvnw.cmd
+!.mvn/
+
+# 13. Exclude anything else that should not be in the build context
+# (Add more patterns as needed for your project specifics)

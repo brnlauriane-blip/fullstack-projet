@@ -1,0 +1,26 @@
+# Créez/éditez le .gitignore à la racine
+cat > .gitignore << 'EOF'
+# Backend
+projet-backend/target/
+projet-backend/.mvn/
+projet-backend/mvnw
+projet-backend/mvnw.cmd
+
+# Frontend
+projet-frontend/node_modules/
+projet-frontend/dist/
+projet-frontend/build/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.local
+EOF

@@ -1,0 +1,41 @@
+services:
+  # Backend Spring Boot
+  backend:
+    build:
+      context: ./projet-backend
+      dockerfile: Dockerfile
+    container_name: springboot-backend
+    restart: unless-stopped
+    init: true
+    environment:
+      # Connexion à votre MySQL local (depuis Docker vers votre machine)
+      - SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/fullstackproject-db?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_USERNAME=fullstackapp
+      - SPRING_DATASOURCE_PASSWORD=fullstackpass
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_SHOW_SQL=true
+    ports:
+      - "8042:8042"
+    networks:
+      - app-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # Frontend Angular
+  frontend:
+    build:
+      context: ./projet-frontend
+      dockerfile: Dockerfile
+    container_name: angular-frontend
+    restart: unless-stopped
+    init: true
+    networks:
+      - app-network
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+    driver: bridge
