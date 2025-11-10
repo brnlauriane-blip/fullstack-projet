@@ -1,0 +1,22 @@
+th {
+  user-select: none;
+}
+
+th:hover {
+  background-color: #f8f9fa;
+}
+
+.btn-create {
+  background-color: #aa5555 !important;
+  color: white;
+}
+
+.title {
+  font-weight: bold;
+  color: white;
+}
+
+.card-color {
+  background-color: #708090ff !important;
+
+}

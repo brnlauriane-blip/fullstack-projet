@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand navbar-dark custom-navbar fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" [routerLink]="['/']">
+      <img src="assets/logo.png" alt="Logo" width="32" height="32" class="me-2" />
+      <span>Diamontronics</span>
+    </a>
+
+    <ul class="navbar-nav me-auto ms-3">
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="usersDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Users
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="usersDropdown">
+          <li><a class="dropdown-item" routerLink="/users">List</a></li>
+          <li><a class="dropdown-item" routerLink="/users/form">Form</a></li>
+        </ul>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="userTypesDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          User Types
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="userTypesDropdown">
+          <li><a class="dropdown-item" routerLink="/user-types">List</a></li>
+          <li><a class="dropdown-item" routerLink="/user-types/form">Form</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

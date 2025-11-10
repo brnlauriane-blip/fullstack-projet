@@ -1,0 +1,46 @@
+<div class="card mt-4">
+  <div class="card-header d-flex justify-content-between align-items-center card-color">
+    <h5 class="title mb-0">User types</h5>
+    <a routerLink="/user-types/form" class="btn btn-sm btn-create">Create</a>
+  </div>
+
+  <div class="card-body">
+    @if (loading) {
+  <span class="spinner-border spinner-border-sm"></span>
+  Loading...
+    } @if (error) {
+    <div class="alert alert-danger">{{ error }}</div>
+    } @if (!loading && list.length) {
+    <table class="table table-hover align-middle">
+      <thead>
+        <tr>
+          <th (click)="sortBy('id')" style="cursor: pointer">
+            ID job @if (sortColumn === 'id') {
+            <span> {{ sortAsc ? '↑' : '↓' }} </span>}
+          </th>
+          <th (click)="sortBy('userTypes')" style="cursor: pointer">
+            Job positions @if (sortColumn === 'userTypes') {
+            <span> {{ sortAsc ? '↑' : '↓' }} </span>}
+          </th>
+          <th class="text-end">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (item of filtered; track item.id) {
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.userTypes }}</td>
+          <td class="text-end">
+            <button class="btn btn-sm btn-secondary me-2" (click)="edit(item)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="delete(item)">Delete</button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    } @if (!loading && !list.length) {
+    <p class="text-muted">Job position not found.</p>
+    }
+  </div>
+</div>

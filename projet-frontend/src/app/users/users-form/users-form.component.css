@@ -1,0 +1,21 @@
+.card-header {
+  background-color: #708090ff !important;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-create {
+  font-size: 1.1rem;
+  background-color: #aa5555 !important;
+  color: white;
+
+}
+
+.btn-delete {
+  font-size: 1.1rem;
+  color: white;
+}
+
+.title {
+  font-weight: bold;
+}

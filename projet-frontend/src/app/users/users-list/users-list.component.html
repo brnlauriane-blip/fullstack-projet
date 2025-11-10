@@ -1,0 +1,65 @@
+<div class="card mt-4">
+  <div class="card-header d-flex justify-content-between align-items-center card-color">
+    <h5 class="title mb-0">Users List</h5>
+    <a routerLink="/users/form" class="btn btn-create btn-sm">Create</a>
+  </div>
+
+  <div class="card-body">
+    @if (loading) {
+      <span class="spinner-border spinner-border-sm"></span>
+      Loading...
+    }
+
+    @if (error) {
+      <div class="alert alert-danger">{{ error }}</div>
+    }
+
+    @if (!loading && list.length) {
+      <table class="table table-hover align-middle">
+        <thead>
+          <tr>
+            <th (click)="sortBy('id')" style="cursor: pointer">
+              ID @if (sortColumn === 'id') {<span>{{ sortAsc ? '↑' : '↓' }}</span>}
+            </th>
+            <th (click)="sortBy('lastName')" style="cursor: pointer">
+              Last Name @if (sortColumn === 'lastName') {<span>{{ sortAsc ? '↑' : '↓' }}</span>}
+            </th>
+            <th (click)="sortBy('firstName')" style="cursor: pointer">
+              First Name @if (sortColumn === 'firstName') {<span>{{ sortAsc ? '↑' : '↓' }}</span>}
+            </th>
+            <th (click)="sortBy('email')" style="cursor: pointer">
+              Email @if (sortColumn === 'email') {<span>{{ sortAsc ? '↑' : '↓' }}</span>}
+            </th>
+            <th (click)="sortBy('userTypes')" style="cursor: pointer">
+              Job @if (sortColumn === 'userTypes') {<span>{{ sortAsc ? '↑' : '↓' }}</span>}
+            </th>
+            <th class="text-end">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (user of list; track user.id) {
+            <tr>
+              <td>{{ user.id }}</td>
+              <td>{{ user.lastName | titlecase }}</td>
+              <td>{{ user.firstName | titlecase }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.userTypes?.userTypes || 'Unknown' }}</td>
+              <td class="text-end">
+                <button class="btn btn-sm btn-outline-secondary me-2" [routerLink]="['/users/profile', user.id]">
+                  View Profile
+                </button>
+                <button class="btn btn-sm btn-secondary me-2" (click)="edit(user)">Edit</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteUsers(user)">Delete</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+
+    @if (!loading && !list.length) {
+      <p class="text-muted">No users found.</p>
+    }
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="home-container">
+  <h1 class="title">
+    Home Page
+  </h1>
+
+  <img src="assets/favicon.ico" alt="Logo"  width="250"/>
+
+  <p class="presentation-text">
+    This web application allows the HR to create, update and delete users or job positions.
+    In each section, users and user types, a list and a form can be found. 
+    The users list allows getting an overview of employees, names, emails, job positions, and their job IDs.
+    In this section, it is possible to update and delete employee profiles. 
+    The users form allows creating new employee profiles. 
+    The user types list allows getting an overview of job positions in the company. 
+    Each job position is related to a job ID. 
+    In this section, it is possible to update or delete job positions. 
+    The user types form allows creating new job positions.
+    <br>
+    <br>
+    Below you will find links to the user lists and the option to create a user under “Users,” 
+    or you can access the list of user types or the user type creation form.
+  </p>
+</div>
+
+<div class="container-fluid link-container d-flex justify-content-between">
+  <div class="section-users text-center" style="width: 48%;">
+    <h2>Users</h2>
+  </div>
+  <div class="section-users text-center" style="width: 48%;">
+    <h2>User Types</h2>
+  </div>
+</div>
+
+<div class="container-fluid sub-container d-flex justify-content-between mt-3 flex-wrap">
+  <div class="container text-center p-3" style="width: 23%;">
+    <a routerLink="/users" class="btn w-100">List</a>
+  </div>
+  <div class="container text-center p-3" style="width: 23%;">
+    <a routerLink="/users/form" class="btn w-100">Form</a>
+  </div>
+  <div class="container text-center p-3" style="width: 23%;">
+    <a routerLink="/user-types" class="btn w-100">List</a>
+  </div>
+  <div class="container text-center p-3" style="width: 23%;">
+    <a routerLink="/user-types/form" class="btn w-100">Form</a>
+  </div>
+</div>
+
+
+

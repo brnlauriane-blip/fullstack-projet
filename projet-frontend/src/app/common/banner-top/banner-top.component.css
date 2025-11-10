@@ -1,0 +1,13 @@
+.custom-navbar {
+  background-color: #708090ff !important;
+  padding: 0.6rem 1rem;
+}
+
+.navbar-brand img {
+  border-radius: 4px;
+}
+
+.dropdown-menu {
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}

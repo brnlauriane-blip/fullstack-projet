@@ -1,0 +1,23 @@
+.card {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.card-header {
+  background-color: #708090ff !important;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card-body p {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-footer {
+  background-color: #f8f9fa;
+}
+
+

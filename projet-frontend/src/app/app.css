@@ -1,0 +1,35 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
+}
+
+.content-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+app-banner-bottom {
+  flex-shrink: 0;
+  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}

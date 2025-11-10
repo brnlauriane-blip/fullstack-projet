@@ -1,0 +1,66 @@
+<div class="card mt-4">
+  <div class="card-header">
+    <h5 class="mb-0 title">{{ isEditMode ? 'Edit User' : 'Add User' }}</h5>
+  </div>
+
+  <div class="card-body">
+    @if (error) {
+    <div class="alert alert-danger">{{ error }}</div>
+    }
+
+    <form [formGroup]="form" (ngSubmit)="save()">
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" id="firstName" class="form-control" formControlName="firstName" />
+        @if (form.get('firstName')?.touched && form.get('firstName')?.invalid) {
+        <div class="text-danger">First Name is required</div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" id="lastName" class="form-control" formControlName="lastName" />
+
+        @if (form.get('lastName')?.touched && form.get('lastName')?.invalid) {
+        <div class="text-danger">Last Name is required</div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-control" formControlName="email" />
+        @if (form.get('email')?.touched && form.get('email')?.invalid) {
+        <div class="text-danger">Valid Email is required</div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <label for="userTypeId" class="form-label">User Type</label>
+        <select id="userTypeId" class="form-select" formControlName="userTypeId">
+          <option [ngValue]="null">Select User Type</option>
+          @for (type of userTypesList; track type.id) {
+          <option [ngValue]="type.id">
+            {{ type.userTypes }}
+          </option>
+          }
+        </select>
+
+        @if (form.get('userTypeId')?.touched && form.get('userTypeId')?.invalid) {
+        <div class="text-danger">User Type is required</div>
+        }
+      </div>
+
+      <button type="submit" class="btn btn-create" [disabled]="loading">
+        {{ isEditMode ? 'Update' : 'Create' }}
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary ms-2 btn-delete"
+        (click)="router.navigate(['/users'])"
+        [disabled]="loading"
+      >
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>
