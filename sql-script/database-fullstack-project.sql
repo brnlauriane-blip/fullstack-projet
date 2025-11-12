@@ -1,20 +1,16 @@
--- Supprimer complètement la base
 DROP SCHEMA IF EXISTS `fullstackproject-db`;
 
--- Recréer avec BIGINT au lieu de INT
 CREATE SCHEMA `fullstackproject-db`;
 USE `fullstackproject-db`;
 
 SET FOREIGN_KEY_CHECKS = 0;
 
--- Table user_type avec BIGINT
 CREATE TABLE IF NOT EXISTS `user_type` (
     `id` BIGINT NOT NULL AUTO_INCREMENT,
     `user_type` VARCHAR(255) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
--- Table users avec BIGINT
 CREATE TABLE IF NOT EXISTS `users` (
     `id` BIGINT NOT NULL AUTO_INCREMENT,
     `last_name` VARCHAR(255) NOT NULL,
